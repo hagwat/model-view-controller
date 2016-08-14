@@ -1,5 +1,6 @@
 package packman;
 
+import java.awt.BorderLayout;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
@@ -8,9 +9,23 @@ import javax.swing.JFrame;
 
 public class ViewFrame extends JFrame implements KeyListener, MouseListener {
 
+	ViewCanvas canvas;
+
+	public ViewFrame() {
+		super("View");
+		canvas = new ViewCanvas();
+		setLayout(new BorderLayout());
+		add(canvas, BorderLayout.CENTER);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		pack();
+		setResizable(false);
+		setVisible(true);
+	}
+
 	@Override
 	public void mouseClicked(MouseEvent e) {
-		// TODO Auto-generated method stub
+		int x = e.getX();
+		int y = e.getY();
 
 	}
 
