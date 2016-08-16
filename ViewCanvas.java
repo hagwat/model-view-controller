@@ -1,8 +1,13 @@
 package packman;
 
+import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.Graphics;
 
+import javax.swing.JButton;
+import javax.swing.JComponent;
+import javax.swing.JFrame;
+import javax.swing.JMenuBar;
 import javax.swing.JPanel;
 
 public class ViewCanvas extends JPanel {
@@ -10,6 +15,17 @@ public class ViewCanvas extends JPanel {
 	 * 
 	 */
 	private static final long serialVersionUID = 401385718012180046L;
+	private JComponent button;
+
+	public ViewCanvas() {
+		super();
+		setLayout(new BorderLayout());
+		button = new JButton("Button1");
+		add(button);
+		button.setBounds(0, 0, 10, 10);		
+		add(new JButton("Button2"),BorderLayout.SOUTH);
+		add(new JMenuBar(),BorderLayout.EAST);
+	}
 
 	protected void paintComponent(Graphics g) {
 		super.paintComponent(g);
